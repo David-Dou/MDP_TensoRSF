@@ -55,7 +55,58 @@ function setGTImage(i) {
   image_GT.oncontextmenu = function() { return false; };
   $('#GT-image-wrapper').empty().append(image_GT);
 }
+var NUM_Mesh_FRAMES = 30;
 
+var Mesh1_Base = "./static/mesh/gt"
+var Mesh1_images = [];
+function preloadMesh1Images() {
+  for (var i = 0; i < NUM_Mesh_FRAMES; i++) {
+    var path = Mesh1_Base + '/' + 'snapshot'+ String(i) + '.png';
+    Mesh1_images[i] = new Image();
+    Mesh1_images[i].src = path;
+  }
+}
+
+function setMesh1Image(i) {
+  var image_Mesh1 = Mesh1_images[i];
+  image_Mesh1.ondragstart = function() { return false; };
+  image_Mesh1.oncontextmenu = function() { return false; };
+  $('#Mesh1-image-wrapper').empty().append(image_Mesh1);
+}
+
+var Mesh2_Base = "./static/mesh/sdf"
+var Mesh2_images = [];
+function preloadMesh2Images() {
+  for (var i = 0; i < NUM_Mesh_FRAMES; i++) {
+    var path = Mesh2_Base + '/' + 'snapshot'+ String(i) + '.png';
+    Mesh2_images[i] = new Image();
+    Mesh2_images[i].src = path;
+  }
+}
+
+function setMesh2Image(i) {
+  var image_Mesh2 = Mesh2_images[i];
+  image_Mesh2.ondragstart = function() { return false; };
+  image_Mesh2.oncontextmenu = function() { return false; };
+  $('#Mesh2-image-wrapper').empty().append(image_Mesh2);
+}
+
+var Mesh3_Base = "./static/mesh/no-sdf"
+var Mesh3_images = [];
+function preloadMesh3Images() {
+  for (var i = 0; i < NUM_Mesh_FRAMES; i++) {
+    var path = Mesh3_Base + '/' + 'snapshot'+ String(i) + '.png';
+    Mesh3_images[i] = new Image();
+    Mesh3_images[i].src = path;
+  }
+}
+
+function setMesh3Image(i) {
+  var image_Mesh3 = Mesh3_images[i];
+  image_Mesh3.ondragstart = function() { return false; };
+  image_Mesh3.oncontextmenu = function() { return false; };
+  $('#Mesh3-image-wrapper').empty().append(image_Mesh3);
+}
 
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
@@ -125,6 +176,21 @@ $(document).ready(function() {
     // setEditingImage2(0);
     $('#Editing-slider').prop('max', NUM_INTERP_FRAMES - 1);
 
+    bulmaSlider.attach();
+    
+    preloadMesh1Images();
+    preloadMesh2Images();
+    preloadMesh3Images();
+    $('#Mesh-slider').on('input', function(event) {
+      var count_mesh = this.value/3
+      setMesh1Image(count_mesh);
+      setMesh2Image(count_mesh);
+      setMesh3Image(count_mesh);
+    });
+    setMesh1Image(0);
+    setMesh2Image(0);
+    setMesh3Image(0);
+    $('#Mesh-slider').prop('max', NUM_INTERP_FRAMES - 1);
     bulmaSlider.attach();
 
     const changeImageBtn1 = document.querySelector("#change-image-btn1");
