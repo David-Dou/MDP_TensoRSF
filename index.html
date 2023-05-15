@@ -670,33 +670,39 @@
           </p>
         </div>
 
-    <div class="column is-vcentered interpolation-panel is-multiline">
-      <div class="columns is-centered ">
-        <div class="column is-3 is-offset-0 ">
-          <div id="GT-image-wrapper">
-            Loading...
-          </div>
-          <p class="has-text-centered has-text-weight-bold is-size-5">Ground Truth</p>
-        </div>
-      </div>
+    <div class="column is-vcentered interpolation-panel ">
       <div class="column interpolation-video-column">
-        <div id="interpolation-image-wrapper">
-          Loading...
+        <div class="columns interpolation-video-column is-multiline">
+          <div class="column is-4 ">
+            <div id="Mesh1-image-wrapper">
+              Loading...
+            </div>
+          </div>
+          <div class="column is-4 ">
+            <div id="Mesh2-image-wrapper">
+              Loading...
+            </div>
+          </div>
+          <div class="column is-4 ">
+            <div id="Mesh3-image-wrapper">
+              Loading...
+            </div>
+          </div>
         </div>
         <div class="columns is-centered is-multiline">
+          <div class="column is-4">
+            <p class="has-text-centered has-text-weight-bold is-size-5">Ground Truth</p>
+          </div>
           <div class="column is-4">
             <p class="has-text-centered has-text-weight-bold is-size-5">SDF</p>
           </div>
           <div class="column is-4">
-            <p class="has-text-centered has-text-weight-bold is-size-5">SDF-alpha</p>
-          </div>
-          <div class="column is-4">
-            <p class="has-text-centered has-text-weight-bold is-size-5">Without-SDF</p>
+            <p class="has-text-centered has-text-weight-bold is-size-5">No-SDF</p>
           </div>
         </div>
         <input class="slider is-full-width is-large is-info"
-               id="interpolation-slider"
-               step="1" min="0" max="100" value="0" type="range">
+               id="Mesh-slider"
+               step="3" min="0" max="30" value="0" type="range">
       </div>
       <!-- <div class="column is-3 has-text-centered"> -->
         <!-- <img src="./static/images/interpolate_end.jpg"
