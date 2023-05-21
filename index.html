@@ -362,12 +362,13 @@
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Scene Editing</h3>
+        <h3 class="title is-4">Editing and Inpainting</h3>
         <div class="content has-text-justified">
           <p>
             We can also animate the scene of editing and inpainting .Use the slider here to see the editing results.
           </p>
         </div>
+        <h4 class="title is-5">office2</h4>
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
             <div class="column is-3 has-text-centered">
@@ -401,12 +402,52 @@
               <p>
                 <input class="slider is-full-width is-large is-info"
                     id="Editing-slider"
-                    step="19.5" min="0" max="100" value="0" type="range">
+                    step="6" min="0" max="100" value="0" type="range">
               </p>
             </div>
 
           </div>
-        </div> 
+        </div>
+        <h4 class="title is-5">room0</h4>
+        <div class="column is-multiline is-vcentered interpolation-panel ">
+          <div class="columns is-vcentered interpolation-panel ">
+            <div class="column is-3 has-text-centered">
+              <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
+              <img src="./static/editing/gt_room0.png"
+                  alt="GT-image"
+                  class="image "/>
+            </div>
+            <!-- <div class="column is-3 has-text-centered">
+              <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
+              <div id="Editing-image2-wrapper">
+                Loading...
+              </div>
+            </div> -->
+            <div class="column is-8 has-text-centered ">
+              
+              <div id="Editing-image2-wrapper">
+                Loading...
+              </div>
+              <div class="columns is-centered ">
+                <div class="column is-4">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+                </div>
+                <div class="column is-4">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
+                </div>
+                <div class="column is-4">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpanit)</p>
+                </div>
+              </div>
+              <p>
+                <input class="slider is-full-width is-large is-info"
+                    id="Editing-slider1"
+                    step="11" min="0" max="100" value="0" type="range">
+              </p>
+            </div>
+
+          </div>
+        </div>  
         <br/>
         
         <h3 class="title is-4">Erasing</h3>
