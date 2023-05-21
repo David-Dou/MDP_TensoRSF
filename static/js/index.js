@@ -20,7 +20,7 @@ function setInterpolationImage(i) {
 }
 
 var Editing_Base = "./static/editing"
-var NUM_Editing_FRAMES = 4;
+var NUM_Editing_FRAMES = 10;
 var Editing_images1 = [];
 function preloadEditingImages1() {
   for (var i = 0; i < NUM_Editing_FRAMES; i++) {
@@ -37,7 +37,22 @@ function setEditingImage1(i) {
   $('#Editing-image1-wrapper').empty().append(image_Editing);
 }
 
+var NUM_Editing_FRAMES2 = 6;
+var Editing_images2 = [];
+function preloadEditingImages2() {
+  for (var i = 0; i < NUM_Editing_FRAMES2; i++) {
+    var path = Editing_Base + '/'  +String(i)+'editing_room0' + '.png';
+    Editing_images2[i] = new Image();
+    Editing_images2[i].src = path;
+  }
+}
 
+function setEditingImage2(i) {
+  var image_Editing2 = Editing_images2[i];
+  image_Editing2.ondragstart = function() { return false; };
+  image_Editing2.oncontextmenu = function() { return false; };
+  $('#Editing-image2-wrapper').empty().append(image_Editing2);
+}
 
 var GT_Base = "./static/interpolation/GT_image"
 var GT_images = [];
@@ -168,21 +183,36 @@ $(document).ready(function() {
     preloadEditingImages1();
     // preloadEditingImages2();
     $('#Editing-slider').on('input', function(event) {
-      var count = this.value / 19.5
+      var count = this.value / 6;
+      // console.log(this.value);
+      // console.log(count);
       setEditingImage1(count);
       // setEditingImage2(count)
     });
     setEditingImage1(0);
     // setEditingImage2(0);
     $('#Editing-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
     bulmaSlider.attach();
-    
+
+    preloadEditingImages2();
+    // preloadEditingImages2();
+    $('#Editing-slider1').on('input', function(event) {
+      var count = this.value / 11;
+      // console.log(this.value);
+      // console.log(count);
+      setEditingImage2(count);
+      // setEditingImage2(count)
+    });
+    setEditingImage2(0);
+    // setEditingImage2(0);
+    $('#Editing-slider1').prop('max', NUM_INTERP_FRAMES - 1);
+    bulmaSlider.attach();
+
     preloadMesh1Images();
     preloadMesh2Images();
     preloadMesh3Images();
     $('#Mesh-slider').on('input', function(event) {
-      var count_mesh = this.value/3
+      var count_mesh = this.value/ 3
       setMesh1Image(count_mesh);
       setMesh2Image(count_mesh);
       setMesh3Image(count_mesh);
