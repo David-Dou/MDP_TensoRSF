@@ -1,26 +1,102 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-var INTERP_BASE = "./static/interpolation/print";
-var NUM_INTERP_FRAMES = 60;
-
-var interp_images = [];
-function preloadInterpolationImages() {
+var INTERP_BASE = "./static/interpolation";
+var NUM_INTERP_FRAMES = 180;
+var MaskDINO_images = [];
+function preloadMaskDINOImages() {
   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + 'output'+String(i) + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
+    padi = i.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/maskdino_remap/' + padi + '_ins_mod_panop_remap.png';
+    MaskDINO_images[i] = new Image();
+    MaskDINO_images[i].src = path;
   }
 }
-
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
+function setMaskDINOImage(i) {
+  var image_MaskDINO = MaskDINO_images[i];
+  image_MaskDINO.ondragstart = function() { return false; };
+  image_MaskDINO.oncontextmenu = function() { return false; };
+  $('#MaskDINO-image-wrapper').empty().append(image_MaskDINO);
+}
+var TensoRFLP_images = [];
+function preloadTensoRLPImages() {
+  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+    padi = i.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/stensorf_lp/' +'059999_'+ padi + '_panop.png';
+    TensoRFLP_images[i] = new Image();
+    TensoRFLP_images[i].src = path;
+  }
+}
+function setTensoRFLPImage(i) {
+  var image_TensoRFLP = TensoRFLP_images[i];
+  image_TensoRFLP.ondragstart = function() { return false; };
+  image_TensoRFLP.oncontextmenu = function() { return false; };
+  $('#TensoRF_LP-image-wrapper').empty().append(image_TensoRFLP);
+}
+var Semantic_images = [];
+function preloadSemanticImages() {
+  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+    p = i*3
+    padi = p.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/sem_nerf/' +'vis_label_'+ padi + '_panop.png';
+    Semantic_images[i] = new Image();
+    Semantic_images[i].src = path;
+  }
+}
+function setSemanticImage(i) {
+  var image_Semantic = Semantic_images[i];
+  image_Semantic.ondragstart = function() { return false; };
+  image_Semantic.oncontextmenu = function() { return false; };
+  $('#Semantic-image-wrapper').empty().append(image_Semantic);
+}
+var DM_NeRF_images = [];
+function preloadDM_NeRFImages() {
+  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+    padi = i.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/dm_nerf/' +'instance_'+ padi + '_panop.png';
+    DM_NeRF_images[i] = new Image();
+    DM_NeRF_images[i].src = path;
+  }
+}
+function setDM_NeRFImage(i) {
+  var image_DM = DM_NeRF_images[i];
+  image_DM.ondragstart = function() { return false; };
+  image_DM.oncontextmenu = function() { return false; };
+  $('#DM-image-wrapper').empty().append(image_DM);
+}
+var Panoptic_images = [];
+function preloadPanopticImages() {
+  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+    padi = i.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/panoptic_lifting/' + 'instance_'+ padi + '_panop.png';
+    Panoptic_images[i] = new Image();
+    Panoptic_images[i].src = path;
+  }
+}
+function setPanopticImage(i) {
+  var image_Panoptic = Panoptic_images[i];
+  image_Panoptic.ondragstart = function() { return false; };
+  image_Panoptic.oncontextmenu = function() { return false; };
+  $('#Panoptic-image-wrapper').empty().append(image_Panoptic);
+}
+var Ours_images = [];
+function preloadOursImages() {
+  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
+    padi = i.toString().padStart(3, '0')
+    var path = INTERP_BASE + '/ours/'+'039999_' + padi + '_panop.png';
+    Ours_images[i] = new Image();
+    Ours_images[i].src = path;
+  }
+}
+function setOursImage(i) {
+  var image_Ours = Ours_images[i];
+  image_Ours.ondragstart = function() { return false; };
+  image_Ours.oncontextmenu = function() { return false; };
+  $('#Ours-image-wrapper').empty().append(image_Ours);
 }
 
+
 var Editing_Base = "./static/editing"
-var NUM_Editing_FRAMES = 10;
+var NUM_Editing_FRAMES = 4;
 var Editing_images1 = [];
 function preloadEditingImages1() {
   for (var i = 0; i < NUM_Editing_FRAMES; i++) {
@@ -54,11 +130,11 @@ function setEditingImage2(i) {
   $('#Editing-image2-wrapper').empty().append(image_Editing2);
 }
 
-var GT_Base = "./static/interpolation/GT_image"
+var GT_Base = "./static/interpolation/GT"
 var GT_images = [];
 function preloadGTImages() {
   for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = GT_Base + '/' + 'remap_vis_sem_instance_'+ String(i) + '.png';
+    var path = GT_Base + '/' + 'remap_vis_sem_instance_'+ String(i) +'_panop.png';
     GT_images[i] = new Image();
     GT_images[i].src = path;
   }
@@ -168,13 +244,28 @@ $(document).ready(function() {
         player.currentTime = player.duration / 100 * this.value;
       })
     }, false);*/
-    preloadInterpolationImages();
+    preloadMaskDINOImages();
+    preloadTensoRLPImages();
+    preloadSemanticImages();
+    preloadDM_NeRFImages();
+    preloadPanopticImages();
+    preloadOursImages();
     preloadGTImages();
     $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
+      setMaskDINOImage(this.value);
+      setTensoRFLPImage(this.value);
+      setSemanticImage(this.value);
+      setDM_NeRFImage(this.value);
+      setPanopticImage(this.value);
+      setOursImage(this.value);
       setGTImage(this.value);
     });
-    setInterpolationImage(0);
+    setMaskDINOImage(0);
+    setTensoRFLPImage(0);
+    setSemanticImage(0);
+    setDM_NeRFImage(0);
+    setPanopticImage(0);
+    setOursImage(0);
     setGTImage(0);
     $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
     
@@ -183,7 +274,7 @@ $(document).ready(function() {
     preloadEditingImages1();
     // preloadEditingImages2();
     $('#Editing-slider').on('input', function(event) {
-      var count = this.value / 6;
+      var count = this.value;
       // console.log(this.value);
       // console.log(count);
       setEditingImage1(count);
@@ -191,13 +282,13 @@ $(document).ready(function() {
     });
     setEditingImage1(0);
     // setEditingImage2(0);
-    $('#Editing-slider').prop('max', NUM_INTERP_FRAMES - 1);
+    $('#Editing-slider').prop('max', NUM_Editing_FRAMES - 1);
     bulmaSlider.attach();
 
     preloadEditingImages2();
     // preloadEditingImages2();
     $('#Editing-slider1').on('input', function(event) {
-      var count = this.value / 11;
+      var count = this.value ;
       // console.log(this.value);
       // console.log(count);
       setEditingImage2(count);
@@ -205,14 +296,14 @@ $(document).ready(function() {
     });
     setEditingImage2(0);
     // setEditingImage2(0);
-    $('#Editing-slider1').prop('max', NUM_INTERP_FRAMES - 1);
+    $('#Editing-slider1').prop('max', NUM_Editing_FRAMES2 - 1);
     bulmaSlider.attach();
 
     preloadMesh1Images();
     preloadMesh2Images();
     preloadMesh3Images();
     $('#Mesh-slider').on('input', function(event) {
-      var count_mesh = this.value/ 3
+      var count_mesh = this.value
       setMesh1Image(count_mesh);
       setMesh2Image(count_mesh);
       setMesh3Image(count_mesh);
@@ -220,7 +311,7 @@ $(document).ready(function() {
     setMesh1Image(0);
     setMesh2Image(0);
     setMesh3Image(0);
-    $('#Mesh-slider').prop('max', NUM_INTERP_FRAMES - 1);
+    $('#Mesh-slider').prop('max', NUM_Mesh_FRAMES - 1);
     bulmaSlider.attach();
 
     const changeImageBtn1 = document.querySelector("#change-image-btn1");
