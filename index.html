@@ -86,21 +86,21 @@
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Multi-scale Distilled Feature Field with VM Factorized Convolution for Sparse-view Supervised 3D-consistent Panoptic Segmentation</h1>
+      <div class="columns is-centered is-fullwidth">
+        <div class="column has-text-centered is-full ">
+          <h1 class="title is-3 publication-title">Multi-scale Distilled Feature Field with VM Factorized Convolution <br>for Sparse-view Supervised 3D-consistent Panoptic Segmentation</h1>
           <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Bin Dou<sup>1</sup>,</span>
+            <span class="author-block">
+              Yongjia Ma<sup>1</sup>,</span>
+            <span class="author-block">
+              Tianyu Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Zejian Yuan<sup>1</sup>
+            </span>
             <!-- <span class="author-block">
-              Keunhong Park<sup>1</sup>,</span>
-            <span class="author-block">
-              <a href="https://utkarshsinha.com">Utkarsh Sinha</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Jonathan T. Barron</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
               <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
             </span>
             <span class="author-block">
@@ -108,7 +108,7 @@
             </span>
             <span class="author-block">
               <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span><!-->
+            </span><! -->
           </div> 
 
           <div class="is-size-5 publication-authors">
@@ -120,7 +120,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -129,7 +129,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -139,7 +139,7 @@
               </span>
               <!-- Video Link. -->
               <span class="link-block">
-                <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                <a href
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-youtube"></i>
@@ -149,7 +149,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -175,7 +175,8 @@
   </div>
 </section>
 
-<section class="hero teaser">
+<!-- overview video -->
+<!-- <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
       <video id="teaser" autoplay muted loop playsinline height="100%">
@@ -187,7 +188,7 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <!-- <section class="hero is-light is-small">
@@ -256,14 +257,55 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose Sparse Object Labeled Tensorial Radiance Field (SOL-TensoRF), a method for novel view synthesis together with 3D-consistent object segmentation. 
-            Previous methods rely on dense 2D segmentation annotations and suffer from severe marginal performance loss with sparse object segmentation label maps. 
-            To address this problem, our method leverages distilled semantic features extracted from input RGB images. We distill these features using a pre-trained image feature extractor as a teacher network, 
-            allowing us to obtain object segmentations with sparse labels while maintaining high performance. In addition, as semantic and object labelling is highly correlated with geometry, 
-            signed distance fields (SDF) representation is used as geometric representation for better reconstruction result. Furthermore, once trained by sparse object labels, 
-            our model can achieve realistic scene editing by manipulating objects in combination with diffusion-based 2D inpainting for mitigating artifact issues. 
-            Experimental results show that our model can successfully perform high-quality geometry, appearance and object field reconstruction under sparse segmentation supervision with significantly reduced training time. Additionally, 
-            we present high fidelity renderings for object-level editing. 
+            We propose Multi-scale Distilled & Postprocessed Tensorial Raw-Semantic Field(MDP-TensoRSF),
+a method for 3D-consistent panoptic segmentation under sparse-view supervision. Previous 3D seg-
+mentation methods have relied on dense-view labels as they suffer from a performance decline which
+is particularly shape when extremely sparser-view labels are provided and fail to give satisfactory
+segmentation results with few number of supervisory viewpoints. Existing image-based distillation
+provides reasonable solution for the few-shot problem, however, features extracted by pre-trained
+teacher networks, such as DINO, will be sensitive to specular highlight regions in RGB images and
+lead to missegmentation for complex scenes. Our method achieves reliable 3D-consistent panoptic
+segmentation without dense-view labels, by distilling multi-scale raw-semantic knowledge extracted
+from images and further postprocessing it with our VM factorized 3D convolution. Specifically, we
+present a two-stage learning model. For the first distillation stage, multi-scale tensorial raw-semantic
+feature field serves as the student model to distill DINO features, and for the following segmentation
+stage, we enhance its guidance for few-shot panoptic segmentation by convolutional postprocessing,
+incorporating our designed 3DConv-VM technique. Experimental results show that our model can
+perform high-quality panoptic segmentation under sparse-view supervision, 
+            as our model exhibits less performance degradation with sparser-view labels and outperforms other segmentation models in our sparest setting, with approximately 12% mIoU, 15% 
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <msup>
+                <mrow>
+                  <mrow>
+                    <mi mathvariant="normal">m</mi>
+                    <mi mathvariant="normal">A</mi>
+                    <mi mathvariant="normal">P</mi>
+                  </mrow>
+                </mrow>
+                <mrow>
+                  <mn>0.50</mn>
+                </mrow>
+              </msup>
+            </math> 
+            and 10% 
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <msup>
+                <mrow>
+                  <mi mathvariant="normal">P</mi>
+                  <mi mathvariant="normal">Q</mi>
+                </mrow>
+                <mrow>
+                  <mrow>
+                    <mi mathvariant="normal">s</mi>
+                    <mi mathvariant="normal">c</mi>
+                    <mi mathvariant="normal">e</mi>
+                    <mi mathvariant="normal">n</mi>
+                    <mi mathvariant="normal">e</mi>
+                  </mrow>
+                </mrow>
+              </msup>
+            </math>
+            improvement.
           </p>
         </div>
       </div>
@@ -271,36 +313,53 @@
     <!--/ Abstract. -->
   
       <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered is-multiline">
       <div class="column is-four-fifths ">
         <h2 class="title is-3">Methods</h2>
         <div class="content has-text-justified">
           <p>
-            Given posed RGB images I of a scene with corresponding segmentation annotations S, 
-            we aim to build a volumetric scene representation that models appearance, geometry and 3D object segmentations, 
-            while using object labels from as few viewpoints as possible. Our proposed method, SOL-TensoRF, 
-            enables generation of RGB images and object segmentations from novel viewpoints while preserving the rendered 2D label of the same 3D object across views. 
-            Picture provides an overview of our method.
+            Given posed RGB images 
+            <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo fence="false" stretchy="false">{</mo>
+              <mi>I</mi>
+              <mo fence="false" stretchy="false">}</mo>
+            </math> 
+            of a scene with part of corresponding segmentation annotations <math xmlns="http://www.w3.org/1998/Math/MathML">
+              <mo fence="false" stretchy="false">{</mo>
+              <mi>S</mi>
+              <mo fence="false" stretchy="false">}</mo>
+            </math>, we aim to build a
+            scene representational model to achieve 3D-consistent novel-view panoptic segmentation, while using supervisory labels
+            from as few viewpoints as possible, as shown in the figure below
+            provides an overview of our model’s architecture, which mainly
+            consists of two parts: tensorial scene representation(focusing
+            on multi-scale knowledge distillation as segmentation prior)
+            and implicit segmentation field(for postprocessing distilled fea-
+            tures and mapping them to panoptic segmentation).
           </p>
-          <p>
-            <img src="./static/images/model (1).png"
-            class="interpolation-image"
-            alt="Interpolate start reference image."/>
-          </p>
+          
         </div>
       </div>
+      <p>
+        <!-- <img src="./static/images/model.png"
+        class="interpolation-image"
+        alt="Interpolate start reference image."/> -->
+        <figure class="image is-9by6">
+          <img src="./static/images/model.svg" alt="Interpolate start reference image.">
+        </figure>
+      </p>
     </div>
       <!--/Methods -->
     <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
+    <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
-        <!-- <div class="publication-video">
+        <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div> -->
       </div>
-    </div>
+    </div> 
     <!--/ Paper video. -->
   </div>
 </section>
@@ -320,7 +379,7 @@
               Use the slider here to observe semantic labels from different perspectivesin of four methods with 5% sparse labels.
           </p>
          </div>
-        <div class="column is-vcentered interpolation-panel is-multiline">
+        <!-- <div class="column is-vcentered interpolation-panel is-multiline">
           <div class="columns is-centered ">
             <div class="column is-3 is-offset-0 ">
               <div id="GT-image-wrapper">
@@ -357,16 +416,69 @@
                    id="interpolation-slider"
                    step="1" min="0" max="100" value="0" type="range">
           </div>
-          <!-- <div class="column is-3 has-text-centered"> -->
+           <div class="column is-3 has-text-centered"> -->
             <!-- <img src="./static/images/interpolate_end.jpg"
                  class="interpolation-image"
                  alt="Interpolation end reference image."/>
             <p class="is-bold">End Frame</p> -->
           <!-- </div> -->
-        </div>
+        <!-- </div> -->
         <br/>
         <!--/ Interpolating. -->
-
+        <div class="columns is-vcentered interpolation-panel  ">
+          <div class="column is-one-quarter ">
+            <div id="GT-image-wrapper">
+              Loading...
+            </div>
+            <p class="has-text-centered has-text-weight-bold is-size-5">Ground Truth</p>
+          </div>
+          <div class="column is-three-quarter  is-multiline">
+            <div class="columns  ">
+              <div class="column is-one-third is-offset-0 ">
+                <div id="MaskDINO-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">MaskDINO</p>
+              </div>
+              <div class="column is-one-third is-offset-0 ">
+                <div id="TensoRF_LP-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">TensoRF+LP</p>
+              </div>
+              <div class="column is-one-third is-offset-0 ">
+                <div id="Semantic-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Semantic-NeRF</p>
+              </div>
+            </div>
+            <div class="columns ">
+              <div class="column is-one-third is-offset-0 ">
+                <div id="DM-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+              </div>
+              <div class="column is-one-third is-offset-0 ">
+                <div id="Panoptic-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Panoptic-Lifting</p>
+              </div>
+              <div class="column is-one-third is-offset-0 ">
+                <div id="Ours-image-wrapper">
+                  Loading...
+                </div>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours</p>
+              </div>
+            </div>
+            <input class="slider is-full-width is-large is-info"
+            id="interpolation-slider"
+            step="1" min="0" max="180" value="0" type="range">
+          </div>
+        </div>
+         
         <!-- Re-rendering. -->
         <h3 class="title is-4">Editing and Inpainting</h3>
         <div class="content has-text-justified">
@@ -378,10 +490,11 @@
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
             <div class="column is-3 has-text-centered">
-              <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
+              
               <img src="./static/editing/gt.png"
                   alt="GT-image"
                   class="image "/>
+                <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
             </div>
             <!-- <div class="column is-3 has-text-centered">
               <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
@@ -402,13 +515,13 @@
                   <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
                 </div>
                 <div class="column is-4">
-                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpanit)</p>
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
                 </div>
               </div>
               <p>
                 <input class="slider is-full-width is-large is-info"
                     id="Editing-slider"
-                    step="6" min="0" max="100" value="0" type="range">
+                    step="1" min="0" max="4" value="0" type="range">
               </p>
             </div>
 
@@ -418,10 +531,11 @@
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
             <div class="column is-3 has-text-centered">
-              <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
+              
               <img src="./static/editing/gt_room0.png"
                   alt="GT-image"
                   class="image "/>
+              <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
             </div>
             <!-- <div class="column is-3 has-text-centered">
               <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
@@ -442,13 +556,13 @@
                   <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
                 </div>
                 <div class="column is-4">
-                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpanit)</p>
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
                 </div>
               </div>
               <p>
                 <input class="slider is-full-width is-large is-info"
                     id="Editing-slider1"
-                    step="11" min="0" max="100" value="0" type="range">
+                    step="1" min="0" max="4" value="0" type="range">
               </p>
             </div>
 
@@ -486,7 +600,7 @@
                 <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
               </div>
               <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpanit)</p>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
               </div>
             </div>
             <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
@@ -532,7 +646,7 @@
                 <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
               </div>
               <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpanit)</p>
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
               </div>
             </div>
             <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
@@ -589,14 +703,14 @@
         </div> 
         <!-- dino-VIDOE -->
 
-        <h3 class="title is-4">DINO Video</h3>
+        <!-- <h3 class="title is-4">DINO Video</h3>
         <div class="content has-text-justified">
           <p>
             We visualize feature fields distilled from DINO.
           </p>
         </div>
         <div class="columns is-centered">
-          <div class="column is-2">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">Replica-office_0</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -604,10 +718,10 @@
               </video>
             </div>
           </div> 
-          <!--/ Visual Effects. -->
+          / Visual Effects. -->
     
           <!-- Matting. -->
-          <div class="column is-2">
+          <!-- <div class="column is-3">
               <h5 class="title is-6 is-center">(Dino field)</h5>
               <div class="content">
                 
@@ -616,16 +730,7 @@
                 </video>
               </div>
           </div>
-          <div class="column is-2">
-            <h5 class="title is-6 is-center">(SAM field)</h5>
-            <div class="content">
-              
-              <video width="320" height="240" autoplay muted loop playsinline height="70%">
-                <source src="./static/dino/office0_dino.mp4" type="video/mp4">
-              </video>
-            </div>
-        </div>
-          <div class="column is-2">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">Replica-office_2</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -634,7 +739,7 @@
             </div>
           </div>
           
-          <div class="column is-2">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">(Dino field)</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -642,18 +747,11 @@
               </video>
             </div>
           </div>
-          <div class="column is-2">
-            <h5 class="title is-6 is-center">(SAM field)</h5>
-            <div class="content">
-              <video width="320" height="240" autoplay muted loop playsinline height="70%">
-                <source src="./static/dino/office2_dino.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+          
+        </div> --> 
 
-        <div class="columns is-centered">
-          <div class="column is-2">
+        <!-- <div class="columns is-centered">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">Scene0010</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -664,7 +762,7 @@
           <!--/ Visual Effects. -->
     
           <!-- Matting. -->
-          <div class="column is-2">
+          <!-- <div class="column is-3">
               <h5 class="title is-6 is-center">(Dino field)</h5>
               <div class="content">
                 <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -672,16 +770,9 @@
                 </video>
               </div>
           </div>
-          <div class="column is-2">
-            <h5 class="title is-6 is-center">(SAM field)</h5>
-            <div class="content">
-              <video width="320" height="240" autoplay muted loop playsinline height="70%">
-                <source src="./static/dino/scene0010_dino.mp4" type="video/mp4">
-              </video>
-            </div>
-        </div>
+        
 
-          <div class="column is-2">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">Scene0038</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -690,7 +781,7 @@
             </div>
           </div>
 
-          <div class="column is-2">
+          <div class="column is-3">
             <h5 class="title is-6 is-center">(Dino field)</h5>
             <div class="content">
               <video width="320" height="240" autoplay muted loop playsinline height="70%">
@@ -698,15 +789,8 @@
               </video>
             </div>
           </div>
-          <div class="column is-2">
-            <h5 class="title is-6 is-center">(SAM field)</h5>
-            <div class="content">
-              <video width="320" height="240" autoplay muted loop playsinline height="70%">
-                <source src="./static/dino/scene0038_dino.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
+        
+        </div> -->
       </div>
     </div>
     <!--/ Animation. -->
@@ -749,7 +833,7 @@
         </div>
         <input class="slider is-full-width is-large is-info"
                id="Mesh-slider"
-               step="3" min="0" max="30" value="0" type="range">
+               step="1" min="0" max="30" value="0" type="range">
       </div>
       <!-- <div class="column is-3 has-text-centered"> -->
         <!-- <img src="./static/images/interpolate_end.jpg"
