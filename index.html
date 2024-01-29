@@ -394,7 +394,7 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
         <div class="content has-text-justified">
           <p>
               Use the slider to observe rendered panoptic segmentation maps from various viewpoints of different methods.
-              with training labels at 5% Sparsity Ratio.
+              with training labels at 95% Sparsity Ratio.
           </p>
          </div>
         <!-- <div class="column is-vcentered interpolation-panel is-multiline">
@@ -498,13 +498,21 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
         </div>
          
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Editing and Inpainting</h3>
+        <h3 class="title is-4">Scene Manipulation and Inpainting</h3>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene of editing and inpainting .Use the slider here to see the editing results.
+            Scene manipulation and further inpainted results are provided 
+            as an application of our method.
+            When compared to DM-NeRF, our segmentation method proves to be 
+            a more reliable foundation for downstream tasks. 
+            <!-- Scene manipulation and additional inpainted outcomes demonstrate the practical application of our approach. -->
+            <!-- When compared to DM-NeRF, our segmentation method proves to be a more dependable foundation for subsequent tasks. -->
+            <!-- We can also animate the scene of editing and inpainting .
+            Use the slider here to see the editing results. -->
           </p>
         </div>
-        <h4 class="title is-5">office2</h4>
+        
+        <h4 class="title is-5">Translating</h4>
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
             <div class="column is-3 has-text-centered">
@@ -545,7 +553,8 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
 
           </div>
         </div>
-        <h4 class="title is-5">room0</h4>
+        
+        <!-- <h4 class="title is-5">room0</h4>
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
             <div class="column is-3 has-text-centered">
@@ -555,14 +564,7 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
                   class="image "/>
               <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
             </div>
-            <!-- <div class="column is-3 has-text-centered">
-              <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
-              <div id="Editing-image2-wrapper">
-                Loading...
-              </div>
-            </div> -->
             <div class="column is-8 has-text-centered ">
-              
               <div id="Editing-image2-wrapper">
                 Loading...
               </div>
@@ -583,18 +585,18 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
                     step="1" min="0" max="4" value="0" type="range">
               </p>
             </div>
-
           </div>
-        </div>  
+        </div>   -->
+
         <br/>
         
-        <h3 class="title is-4">Erasing</h3>
-        <div class="content has-text-justified ">
+        <h4 class="title is-4">Erasing</h4>
+        <!-- <div class="content has-text-justified ">
           <p>
             We can also animate the scene of erasing the object .Use the button here to see the erasing results.
           </p>
         </div>
-        <h4 class="title is-5">office3</h4>
+        <h4 class="title is-5">office3</h4> -->
         <div class="columns is-vcentered interpolation-panel">
           <!-- <button id="change-image-btn" class="button ">Impainting</button> -->
           <div class="column is-3 has-text-centered ">
@@ -640,7 +642,8 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
           </div> -->
           
         </div> 
-        <h4 class="title is-5">room0</h4>
+
+        <!-- <h4 class="title is-5">room0</h4> -->
         <div class="columns is-vcentered interpolation-panel">
           <!-- <button id="change-image-btn" class="button ">Impainting</button> -->
           <div class="column is-3 has-text-centered ">
