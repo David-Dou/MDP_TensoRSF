@@ -259,7 +259,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose Multi-scale Distilled & Postprocessed Tensorial Raw-Semantic Field(MDP-TensoRSF),
+            <!-- We propose Multi-scale Distilled & Postprocessed Tensorial Raw-Semantic Field(MDP-TensoRSF),
 a method for 3D-consistent panoptic segmentation under sparse-view supervision. Previous 3D seg-
 mentation methods have relied on dense-view labels as they suffer from a performance decline which
 is particularly shape when extremely sparser-view labels are provided and fail to give satisfactory
@@ -273,8 +273,23 @@ present a two-stage learning model. For the first distillation stage, multi-scal
 feature field serves as the student model to distill DINO features, and for the following segmentation
 stage, we enhance its guidance for few-shot panoptic segmentation by convolutional postprocessing,
 incorporating our designed 3DConv-VM technique. Experimental results show that our model can
-perform high-quality panoptic segmentation under sparse-view supervision, 
-            as our model exhibits less performance degradation with sparser-view labels and outperforms other segmentation models in our sparest setting, with approximately 12% mIoU, 15% 
+perform high-quality panoptic segmentation under sparse-view supervision,  -->
+            We propose Multi-scale Distilled & Postprocessed Tensorial Raw-Semantic Field(MDP-TensoRSF),
+            a method for 3D-consistent panoptic segmentation under sparse-view supervision.
+            Previous 3D segmentation methods have relied on dense-view labels as they suffer from a performance decline
+            which is particularly shape when extremely sparser-view labels are provided and fail to give satisfactory segmentation results
+            with few number of supervisory viewpoints. Existing image-based distillation provides reasonable solution for the few-shot problem,
+            however, features extracted by pre-trained teacher networks, such as DINO, will be sensitive to specular highlight regions in RGB images
+            and lead to missegmentation for complex scenes. Our method achieves reliable 3D-consistent panoptic segmentation without dense-view labels,
+            by distilling multi-scale raw-semantic knowledge extracted from images and further postprocessing it with our VM factorized 3D convolution.
+            Specifically, we present a two-stage learning model. For the first distillation stage,
+            multi-scale tensorial raw-semantic feature field serves as the student model to distill DINO features,
+            and for the following segmentation stage,
+            we enhance its guidance for few-shot panoptic segmentation by convolutional postprocessing,
+            incorporating our designed 3DConv-VM technique.
+            Experimental results show that our model can perform high-quality panoptic segmentation under sparse-view supervision,
+            as our model exhibits less performance degradation with sparser-view labels and outperforms other segmentation models in our sparest setting,
+            with approximately 12% mIoU, 15% 
             <math xmlns="http://www.w3.org/1998/Math/MathML">
               <msup>
                 <mrow>
