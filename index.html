@@ -112,7 +112,7 @@
           </div> 
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>Xi’an Jiaotong University</span>
+            <span class="author-block"><sup>1</sup>Institute of Artificial Intelligence and Robotics, Xi’an Jiaotong University</span>
             <!-- <span class="author-block"><sup>2</sup>Google Research</span> -->
           </div>
 
@@ -538,10 +538,10 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
                   <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
                 </div>
                 <div class="column is-4">
-                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Manipulated)</p>
                 </div>
                 <div class="column is-4">
-                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpainted)</p>
                 </div>
               </div>
               <p>
@@ -590,105 +590,12 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
 
         <br/>
         
-        <h4 class="title is-4">Erasing</h4>
-        <!-- <div class="content has-text-justified ">
-          <p>
-            We can also animate the scene of erasing the object .Use the button here to see the erasing results.
-          </p>
-        </div>
-        <h4 class="title is-5">office3</h4> -->
-        <div class="columns is-vcentered interpolation-panel">
-          <!-- <button id="change-image-btn" class="button ">Impainting</button> -->
-          <div class="column is-3 has-text-centered ">
-            
-            <img src="./static/editing/38_rgb_gt.png"
-                 alt="GT-image"
-                 class="image is-512x512"/>
-            <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
-          </div>
-          <div class="column is-8 has-text-centered">
-            
-            <img id = "output-img1"
-                src="./static/editing/erasing_gt.png"
-                alt="Erasing-image"
-                class="image is-648x648"/>
-            <div class="columns is-centered ">
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
-              </div>
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
-              </div>
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
-              </div>
-            </div>
-            <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
-          </div>
-          <!-- <div class="content has-text-justified is-multiline">
-            <div class="column is-narrow">
-              <p class="is-size-4 has-text-centered has-text-weight-bold">Erasing</p>
-            </div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column">
-              <p class="is-size-4 has-text-centered has-text-weight-bold">Inpainting</p>
-            </div>
-          </div> -->
-          
-        </div> 
 
-        <!-- <h4 class="title is-5">room0</h4> -->
-        <div class="columns is-vcentered interpolation-panel">
-          <!-- <button id="change-image-btn" class="button ">Impainting</button> -->
-          <div class="column is-3 has-text-centered ">
-            
-            <img src="./static/editing/7_rgb_gt.png"
-                 alt="GT-image"
-                 class="image is-512x512"/>
-            <p class="is-size-5 has-text-centered has-text-weight-bold">Ground Truth</p>
-          </div>
-          <div class="column is-8 has-text-centered">
-            
-            <img id = "output-img2"
-                src="./static/editing/erasing_gt_room0.png"
-                alt="Erasing-image"
-                class="image is-648x648"/>
-            <div class="columns is-centered ">
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
-              </div>
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Edit)</p>
-              </div>
-              <div class="column is-4">
-                <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpaint)</p>
-              </div>
-            </div>
-            <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
-          </div>
-          <!-- <div class="content has-text-justified is-multiline">
-            <div class="column is-narrow">
-              <p class="is-size-4 has-text-centered has-text-weight-bold">Erasing</p>
-            </div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column is-narrow"></div>
-            <div class="column">
-              <p class="is-size-4 has-text-centered has-text-weight-bold">Inpainting</p>
-            </div>
-          </div> -->
-          
-        </div> 
+
+
+
+
+
         <h3 class="title is-4">DINO Features</h3>
         <div class="content has-text-justified">
           <p>
@@ -710,9 +617,8 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
             </div>
           </div>
         
-        
           <!-- <button id="change-image-btn" class="button ">Impainting</button> -->
-          <div class="column is-6 has-text-centered ">
+          <!-- <div class="column is-6 has-text-centered ">
             <img src="./static/dino/ScanNet.jpg"
                   alt="DINO-image"
                   class="image is-512x512"/>
@@ -721,8 +627,10 @@ perform high-quality panoptic segmentation under sparse-view supervision,  -->
                 <p class="has-text-centered has-text-weight-bold is-size-5">ScanNet</p>
               </div>
             </div>
-          </div>
+          </div> -->
+        
         </div> 
+        
         <!-- dino-VIDOE -->
 
         <!-- <h3 class="title is-4">DINO Video</h3>
