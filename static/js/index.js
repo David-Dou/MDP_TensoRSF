@@ -165,7 +165,7 @@ function setMesh1Image(i) {
   $('#Mesh1-image-wrapper').empty().append(image_Mesh1);
 }
 
-var Mesh2_Base = "./static/mesh/sdf"
+var Mesh2_Base = "./static/mesh/no-sdf"
 var Mesh2_images = [];
 function preloadMesh2Images() {
   for (var i = 0; i < NUM_Mesh_FRAMES; i++) {
@@ -182,7 +182,7 @@ function setMesh2Image(i) {
   $('#Mesh2-image-wrapper').empty().append(image_Mesh2);
 }
 
-var Mesh3_Base = "./static/mesh/no-sdf"
+var Mesh3_Base = "./static/mesh/sdf"
 var Mesh3_images = [];
 function preloadMesh3Images() {
   for (var i = 0; i < NUM_Mesh_FRAMES; i++) {
