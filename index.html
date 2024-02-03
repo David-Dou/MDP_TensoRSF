@@ -272,7 +272,7 @@
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
+    <div class="columns is-centered has-text-centered is-multiline">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
@@ -368,7 +368,50 @@
         </figure>
       </p>
     </div>
-      <!--/Methods -->
+    
+    <br/>
+    <br/>
+
+    <!--/Methods -->
+    <div class="columns is-centered has-text-centered is-multiline">
+      <h2 class="title is-3">Comparisons</h2>
+      <div class="column is-four-fifths ">
+        <h3 class="title is-4">Comparison on Performance-Sparsity Trend</h3>
+          <div class="content has-text-justified">
+            <p>
+              <!-- Comparison on performance-sparsity trend.  -->
+              Each line chart takes Sparsity Ratio of supervisory labels as the independent variable,
+              and different model's metrics value calculated by 
+              averaging panoptic segmentation metrics over all scenes from (a)Replica/(b)ScanNet dataset 
+              as the implicit variable.
+            </p>
+          </div>
+      </div>
+      <p>
+        <figure class="image is-9by6">
+          <img src="./static/images/demo.svg" alt="Interpolate start reference image.">
+        </figure>
+      </p>
+
+      <br/>
+
+      <div class="column is-four-fifths ">
+        <h3 class="title is-4">Comparison under Sparsest-view Supervision</h3>
+          <div class="content has-text-justified">
+            <p>
+              Comparison on novel-view panoptic segmentation performance under sparsest-view supervision
+              (95% Sparsity Ratio).
+            </p>
+          </div>
+      </div>
+      <p>
+        <figure class="image is-9by6">
+          <img src="./static/images/table.png" alt="Interpolate start reference image.">
+        </figure>
+      </p>
+    
+    </div>
+    
     <!-- Paper video. -->
     <!-- <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -376,10 +419,11 @@
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div> -->
+        </div>
       </div>
-    </div> 
+    </div>  -->
     <!--/ Paper video. -->
+
   </div>
 </section>
 
