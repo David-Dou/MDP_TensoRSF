@@ -94,13 +94,21 @@ function setOursImage(i) {
   $('#Ours-image-wrapper').empty().append(image_Ours);
 }
 
-
+// Translating
 var Editing_Base = "./static/editing"
-var NUM_Editing_FRAMES = 4;
 var Editing_images1 = [];
+// var NUM_Editing_FRAMES = 4;
+// function preloadEditingImages1() {
+//   for (var i = 0; i < NUM_Editing_FRAMES; i++) {
+//     var path = Editing_Base + '/'  +String(i)+'editing' + '.png';
+//     Editing_images1[i] = new Image();
+//     Editing_images1[i].src = path;
+//   }
+// }
+var NUM_Editing_FRAMES = 3;
 function preloadEditingImages1() {
   for (var i = 0; i < NUM_Editing_FRAMES; i++) {
-    var path = Editing_Base + '/'  +String(i)+'editing' + '.png';
+    var path = Editing_Base + '/translated_office2_step' + String(i) + '.png';
     Editing_images1[i] = new Image();
     Editing_images1[i].src = path;
   }
@@ -320,13 +328,15 @@ $(document).ready(function() {
     changeImageBtn1.addEventListener("click", function() {
       // 更换输出的图片
       const outputImg1 = document.querySelector("#output-img1");
-      outputImg1.src = "./static/editing/erasing.png";
+      // outputImg1.src = "./static/editing/erasing.png";
+      outputImg1.src = "./static/editing/erased_office3.png";
     });
 
     changeImageBtn2.addEventListener("click", function() {
       // 更换输出的图片
       const outputImg2 = document.querySelector("#output-img2");
-      outputImg2.src = "./static/editing/erasing_room0.png";
+      // outputImg2.src = "./static/editing/erasing_room0.png";
+      outputImg2.src = "./static/editing/erased_room0.png";
     });
     // const changeImageBtn = document.querySelector("#change-image-btn");
 
