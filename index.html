@@ -516,21 +516,20 @@
         <h4 class="title is-5">Translating</h4>
         <div class="column is-multiline is-vcentered interpolation-panel ">
           <div class="columns is-vcentered interpolation-panel ">
-            <div class="column is-3 has-text-centered">
-              
+            
+            <!-- <div class="column is-3 has-text-centered">              
               <img src="./static/editing/gt.png"
                   alt="GT-image"
                   class="image "/>
                 <p class="is-size-5 has-text-centered has-text-weight-bold">Before Manipulation</p>
-            </div>
+            </div> -->
             <!-- <div class="column is-3 has-text-centered">
               <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
               <div id="Editing-image2-wrapper">
                 Loading...
               </div>
             </div> -->
-            <div class="column is-8 has-text-centered ">
-              
+            <!-- <div class="column is-8 has-text-centered ">  
               <div id="Editing-image1-wrapper">
                 Loading...
               </div>
@@ -539,7 +538,7 @@
                   <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
                 </div>
                 <div class="column is-4">
-                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Manipulated)</p>
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Translated)</p>
                 </div>
                 <div class="column is-4">
                   <p class="has-text-centered has-text-weight-bold is-size-5">Ours(Inpainted)</p>
@@ -549,6 +548,41 @@
                 <input class="slider is-full-width is-large is-info"
                     id="Editing-slider"
                     step="1" min="0" max="4" value="0" type="range">
+              </p>
+            </div> -->
+
+
+            <!-- <div class="column is-3 has-text-centered">
+              <p class="is-size-5 has-text-centered has-text-weight-bold ">DM-NeRF</p>
+              <div id="Editing-image2-wrapper">
+                Loading...
+              </div>
+            </div> -->
+            <div class="column is-12 has-text-centered ">  
+              <div id="Editing-image1-wrapper">
+                Loading...
+              </div>
+              <div class="columns is-centered ">
+                <div class="column is-3">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+                </div>
+                <div class="column is-3">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+                </div>
+                <div class="column is-3">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Translated)</p>
+                </div>
+                <div class="column is-3">
+                  <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Inpainted)</p>
+                </div>
+              </div>
+              <p>
+                <!-- <input class="slider is-full-width is-large is-info"
+                    id="Editing-slider"
+                    step="1" min="0" max="4" value="0" type="range"> -->
+                <input class="slider is-full-width is-large is-info"
+                    id="Editing-slider"
+                    step="1" min="0" max="3" value="0" type="range">
               </p>
             </div>
 
@@ -599,11 +633,15 @@
         </div>
         <h4 class="title is-5">office3</h4> -->
         <div class="columns is-vcentered interpolation-panel">
+          
           <!-- <button id="change-image-btn" class="button ">Inpainting</button> -->
-          <div class="column is-3 has-text-centered ">
-            <img src="./static/editing/38_rgb_gt.png"
+          <!-- <div class="column is-3 has-text-centered "> -->
+            <!-- <img src="./static/editing/38_rgb_gt.png"
                  alt="GT-image"
-                 class="image is-512x512"/>
+                 class="image is-512x512"/> -->
+            <!-- <img src="./static/editing/38_rgb_gt_new.png"
+                 alt="GT-image"
+                 class="image is-648x648"/>
             <p class="is-size-5 has-text-centered has-text-weight-bold">Before Manipulation</p>
           </div>
           <div class="column is-8 has-text-centered">
@@ -623,8 +661,30 @@
               </div>
             </div>
             <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
-          </div>
+          </div> -->
           
+          <div class="column is-12 has-text-centered">
+            <img id = "output-img1"
+                src="./static/editing/before_erasing_office3.png"
+                alt="Erasing-image"
+                class="image is-648x648"/>
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Erased)</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Inpainted)</p>
+              </div>
+            </div>
+            <button id="change-image-btn1" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
+          </div>
+
           <!-- <div class="content has-text-justified is-multiline">
             <div class="column is-narrow">
               <p class="is-size-4 has-text-centered has-text-weight-bold">Erasing</p>
@@ -644,8 +704,12 @@
         </div> 
         <!-- <h4 class="title is-5">room0</h4> -->
         <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered ">
-            <img src="./static/editing/7_rgb_gt.png"
+        
+          <!-- <div class="column is-3 has-text-centered "> -->
+            <!-- <img src="./static/editing/7_rgb_gt.png"
+                 alt="GT-image"
+                 class="image is-512x512"/> -->
+            <!-- <img src="./static/editing/7_rgb_gt_new.png"
                  alt="GT-image"
                  class="image is-512x512"/>
             <p class="is-size-5 has-text-centered has-text-weight-bold">Before Manipulation</p>
@@ -667,8 +731,30 @@
               </div>
             </div>
             <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
-          </div>
+          </div> -->
           
+          <div class="column is-12 has-text-centered">
+            <img id = "output-img2"
+                src="./static/editing/before_erasing_room0.png"
+                alt="Erasing-image"
+                class="image is-648x648"/>
+            <div class="columns is-centered">
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Before Manipulation</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">DM-NeRF</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Erased)</p>
+              </div>
+              <div class="column is-3">
+                <p class="has-text-centered has-text-weight-bold is-size-5">Ours (Inpainted)</p>
+              </div>
+            </div>
+            <button id="change-image-btn2" class="button is-medium is-info has-text-weight-bold">Erasing</button> 
+          </div>
+
         </div> 
 
         <h3 class="title is-4">DINO Features</h3>
