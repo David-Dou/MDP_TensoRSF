@@ -331,13 +331,28 @@ $(document).ready(function() {
       // outputImg1.src = "./static/editing/erasing.png";
       outputImg1.src = "./static/editing/erased_office3.png";
     });
-
     changeImageBtn2.addEventListener("click", function() {
       // 更换输出的图片
       const outputImg2 = document.querySelector("#output-img2");
       // outputImg2.src = "./static/editing/erasing_room0.png";
       outputImg2.src = "./static/editing/erased_room0.png";
     });
+
+    const resetImageBtn1 = document.querySelector("#reset-image-btn1");
+    // 为按钮元素添加点击事件监听器
+    resetImageBtn1.addEventListener("click", function() {
+      // 更换输出的图片
+      const outputImg1 = document.querySelector("#output-img1");
+      outputImg1.src = "./static/editing/before_erasing_office3.png";
+    });
+    const resetImageBtn2 = document.querySelector("#reset-image-btn2");
+    // 为按钮元素添加点击事件监听器
+    resetImageBtn2.addEventListener("click", function() {
+      // 更换输出的图片
+      const resetImg2 = document.querySelector("#output-img2");
+      resetImg2.src = "./static/editing/before_erasing_room0.png";
+    });
+
     // const changeImageBtn = document.querySelector("#change-image-btn");
 
     // //  为按钮元素添加点击事件监听器
